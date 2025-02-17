@@ -1,11 +1,17 @@
-from fastapi import APIRouter
+# backend/api/assistant.py
 
-# Create a router instance
+from fastapi import APIRouter, HTTPException
+from core.stt.speech_recognition import SpeechToText
+
 router = APIRouter()
+stt = SpeechToText(model="base", use_vosk=False)  # Use tiny model by default
 
-# Define a route for /assistant
-@router.get("/")
-def assistant_info():
-    return {"message": "This is the AI Assistant API!"}
-
-# You can add more routes to handle specific assistant functionalities here.
+@router.get("/speech-to-text")
+async def speech_to_text():
+    try:
+        text = stt.recognize_speech()
+        if text.startswith("Error"):
+            raise HTTPException(status_code=500, detail=text)
+        return {"transcribed_text": text}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
