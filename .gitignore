@@ -1,0 +1,19 @@
+# Ignore Virtual Environment
+venv/
+.env
+
+# Ignore Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore System Files
+.DS_Store
+Thumbs.db
+
+# Ignore Logs
+logs/
+*.log
+
+# Ignore Cloud Configs
+*.pem
