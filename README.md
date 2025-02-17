@@ -7,35 +7,41 @@ This is an AI-powered assistant capable of speech recognition, object detection,
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPO_URL>
+git clone <https://github.com/Deveshch710/Ai-Assistant>
 cd AI-Assistant
-2️⃣ Create & Activate a Virtual Environment
-Bash
+```
 
+### 2️⃣ Create & Activate a Virtual Environment
+```bash
 python -m venv venv
+```
+
 Activate:
-
 Windows:
-Bash
-
+```bash
 venv\Scripts\activate
+```
 macOS/Linux:
-Bash
-
+``` bash
 source venv/bin/activate
-3️⃣ Install Dependencies
-Bash
+```
 
+### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
-4️⃣ Running the Backend (FastAPI)
-Bash
+```
 
+### 4️⃣ Running the Backend (FastAPI)
+```bash
 uvicorn backend.main:app --reload
-5️⃣ Running the Streamlit UI
-Bash
+```
 
+5️⃣ Running the Streamlit UI
+```bash
 streamlit run frontend/streamlit-ui/app.py
-📌 Contributing 🤝
+```
+
+## 📌 Contributing 🤝
 Fork the repository.
 Create a new branch: git checkout -b feature-branch
 Commit your changes: git commit -m "Added feature X"
