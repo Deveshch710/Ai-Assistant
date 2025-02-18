@@ -1,5 +1,17 @@
 # backend/core/stt/speech_recognition.py
 
+# we are using which is a wrapper around the Whisper library for speech recognition.
+#This library provides a simple interface to record audio, enhance
+#its quality, and transcribe it using Whisper's speech recognition models.
+#We are using its base model as the model increase it will require more memory and GPU. But give more better output more presise, and tewer samlple rate which give the best output
+#We are also using the Vosk library as an alternative for speech recognition.
+#we are recoring the audio, then elementaing the noice by doing the noise reduction using spectral gating, then we are applying the bandpass filter to focus on speech frequencies (300Hz - 3000Hz).
+#Then we are transcribing the audio with improved accuracy by using Whisper library.
+#We are also using the Vosk library as an alternative for speech recognition.
+
+
+
+
 import whisper
 import vosk
 import sounddevice as sd
