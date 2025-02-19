@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api import assistant, user, nlp, tts  # Import the new NLP API
+from api import assistant, user, nlp, tts ,vision # Import the new NLP API
 
 app = FastAPI(title="AI Assistant", version="1.0")
 
@@ -18,6 +18,7 @@ app.include_router(assistant.router, prefix="/assistant", tags=["Assistant"])
 app.include_router(user.router, prefix="/user", tags=["User"])
 app.include_router(nlp.router, prefix="/nlp", tags=["NLP"])  # Add NLP API
 app.include_router(tts.router, prefix="/tts", tags=["TTS"])  # Add TTS API
+app.include_router(vision.router, prefix="/vision", tags=["Vision"])  # Added Vision API
 
 @app.get("/")
 def home():
